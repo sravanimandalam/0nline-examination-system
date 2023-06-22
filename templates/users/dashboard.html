@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("https://images.unsplash.com/photo-1516397281156-ca07cf9746fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b25saW5lJTIwZXhhbXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid aqua;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .container li {
+            margin-bottom: 10px;
+        }
+
+        .container li a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            background-color: aqua;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .container li a:hover {
+            background-color: #ddd;
+        }
+
+        .logout {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logout a {
+            color: #888;
+            text-decoration: none;
+        }
+
+        .logout a:hover {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>User Dashboard</h2>
+        <div class="logout">
+            <a href="{{url_for('user')}}">&#8617; Logout</a>
+        </div>
+
+        <ul>
+            <li><a href="{{url_for('view_list')}}">View Available Exams</a></li>
+            <li><a href="{{url_for('exam_list')}}">Attempt Available Exams</a></li>
+            <li><a href="{{url_for('view_attempted_exams')}}">View Attempted Exams</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Result</title>
+    <style>
+        body {
+            background-color: #9eaeef;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #d2eaa3;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exam Result</h1>
+        <p>Total Score: {{ total_score }}</p>
+
+        <h2>Marked Questions:</h2>
+        <ul>
+            {% for question_id, is_correct in marked_questions %}
+                <li>
+                    Question ID: {{ question_id }}
+                    {% if is_correct %}
+                        <span class="correct">(Correct)</span>
+                    {% else %}
+                        <span class="incorrect">(Incorrect)</span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
